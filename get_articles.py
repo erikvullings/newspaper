@@ -1,6 +1,5 @@
 import datetime
 import newspaper
-import sys
 import uuid
 import json
 import argparse
