@@ -1,3 +1,4 @@
+import datetime
 import newspaper
 import sys
 import uuid
@@ -8,6 +9,7 @@ import argparse
 class Article:
     def __init__(self, title, url, text, image_url, published_at):
         self.id = str(uuid.uuid4())
+        self.created = datetime.datetime.now()
         self.title = title
         self.url = url
         self.text = text
@@ -22,6 +24,7 @@ class Article:
             "text": self.text,
             "imageUrl": self.image_url,
             "publishedAt": self.published_at.isoformat() if self.published_at else None,
+            "created": self.created.isoformat(),
         }
 
 
